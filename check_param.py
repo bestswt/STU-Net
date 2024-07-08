@@ -1,12 +1,21 @@
 from nnunetv2.training.nnUNetTrainer.nnUNetTrainer import nnUNetTrainer
 from torchinfo import summary
+import json
+
+# 读取并解析 dataset_json 文件
+with open("/scratch/users/k23065445/baseline/nnUNet_preprocessed/Dataset277_TotalSegmentator/dataset.json", 'r') as f:
+    dataset_json_dict = json.load(f)
+
+# 读取并解析 nnUNetPlans.json 文件
+with open("/scratch/users/k23065445/baseline/nnUNet_preprocessed/Dataset277_TotalSegmentator/nnUNetPlans.json", 'r') as f:
+    nnUNetPlans_dict = json.load(f)
 
 # 创建并初始化模型
 model = nnUNetTrainer(
-    plans="/scratch/users/k23065445/baseline/nnUNet_preprocessed/Dataset277_TotalSegmentator/nnUNetPlans.json",
+    plans=nnUNetPlans_dict,
     configuration="3d_fullres",
     fold=277,
-    dataset_json="/scratch/users/k23065445/baseline/nnUNet_preprocessed/Dataset277_TotalSegmentator/dataset.json",
+    dataset_json=dataset_json_dict,
 )
 model.initialize()
 
