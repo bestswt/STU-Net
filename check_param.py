@@ -1,4 +1,4 @@
-from nnunetv2.training.nnUNetTrainer.STUNetTrainer import STUNetTrainer_large as nnUNetTrainer
+from nnunetv2.training.nnUNetTrainer.STUNetTrainer import STUNetTrainer_huge as nnUNetTrainer
 from torchinfo import summary
 import json
 
