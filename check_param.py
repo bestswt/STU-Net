@@ -14,7 +14,7 @@ model = trainer.network
 
 # 方法1：使用torchsummary
 model_summary = summary(model, input_size=(2, 112, 112, 128))  # 这里的input_size应根据您的实际输入大小进行调整
-print(f"Total FLOPs: {model_summary.total_ops}")
+# print(f"Total FLOPs: {model_summary.total_ops}")
 
 
 # 方法2：直接计算参数数量
