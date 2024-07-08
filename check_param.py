@@ -1,4 +1,4 @@
-from nnunet.inference.predict import load_model_and_checkpoint_files
+from nnunetv2.inference.predict import load_model_and_checkpoint_files
 from torchinfo import summary
 import torch
 
