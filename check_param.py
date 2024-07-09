@@ -1,4 +1,4 @@
-from nnunetv2.training.nnUNetTrainer.STUNetTrainer import STUNetTrainer_small as nnUNetTrainer
+from nnunetv2.training.nnUNetTrainer.STUNetTrainer import STUNetTrainer_base as nnUNetTrainer
 from torchinfo import summary
 import json
 from fvcore.nn import FlopCountAnalysis
@@ -29,4 +29,4 @@ summary(model.network, input_size=input_size)
 # 计算 FLOPs
 random_input = torch.randn(input_size).cuda()
 flops = FlopCountAnalysis(model.network, random_input)
-print(f"FLOPs: {flops.total()/1e9:.1f} G")
+print(f"FLOPs: {flops.total()/1e9:.1f}G")
