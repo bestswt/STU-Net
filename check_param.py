@@ -1,4 +1,4 @@
-from nnunetv2.training.nnUNetTrainer.STUNetTrainer import STUNetTrainer_huge as nnUNetTrainer
+from nnunetv2.training.nnUNetTrainer.STUNetTrainer import STUNetTrainer_small as nnUNetTrainer
 from torchinfo import summary
 import json
 from fvcore.nn import FlopCountAnalysis
