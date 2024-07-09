@@ -23,7 +23,7 @@ model = nnUNetTrainer(
 model.initialize()
 
 # 使用随机输入数据来计算参数量和 FLOPs
-input_size = (4, 1, 112, 112, 128)  # 根据你的输入数据尺寸进行调整
+input_size = (8, 1, 112, 112, 128)  # 根据你的输入数据尺寸进行调整
 summary(model.network, input_size=input_size)
 
 # 计算 FLOPs
