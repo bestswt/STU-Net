@@ -23,10 +23,10 @@ model = nnUNetTrainer(
 model.initialize()
 
 # 使用随机输入数据来计算参数量和 FLOPs
-input_size = (2, 1, 112, 112, 128)  # 根据你的输入数据尺寸进行调整
+input_size = (4, 1, 112, 112, 128)  # 根据你的输入数据尺寸进行调整
 summary(model.network, input_size=input_size)
 
 # 计算 FLOPs
-random_input = torch.randn(input_size)
+random_input = torch.randn(input_size).cuda()
 flops = FlopCountAnalysis(model.network, random_input)
 print(f"FLOPs: {flops.total()/1e9:.1f} G")
